@@ -1,0 +1,11 @@
+*/.iml
+*/target/*
+*/.idea/*
+*/logs/*
+*/out/*
+*/.settings/*
+*.pyc
+*/dat/*
+*/log/*
+*/result/*
+*/.idea
