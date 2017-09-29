@@ -1,0 +1,37 @@
+抽象工厂
+
+
+Abstract Factory pattern is to provide a way to obtain an appropriate concrete factory
+that can provide the specific type of product required by a client.
+The client need only be aware of the Abstract Factory type and obtains the concrete factory
+either by directly accessing it or by obtaining it from a Factory of Factories.
+
+
+Intent
+To provide a way of creating families of different products without needing to know the actual implementing types.
+
+Forces/Motivation
+The Abstract Factory Pattern can be used when
+• A client must be able to work with a set of products for which there are multiple different
+  implementations and we wish to hide that detail from the client.
+•  We wish to be able to extend the range of implementations of a set of Products
+ without having to alter clients.
+
+Constituent Parts
+There are a number of roles in the Abstract Factory Pattern:
+AbstractFactory:
+    Defines the abstract type that will beused to define the interface supplied by the factories to clients.
+Concrete Factory:
+    This role is played by one or more implementing types that provide the concrete realization of the operations defined in the Abstract Factory.
+    These operations instantiate different version of the products in the associated product hierarchies.
+Factory of Factories (Factory Provider):
+    This role is used to provide an object that can supply the appropriate type of Concrete Factory based on some criteria or configuration information.
+Product:
+    An abstraction that represents a type of product object. There may be many different products associated with an Abstract Factory hierarchy.
+Concrete Products:
+    One or more concrete implementations of the Product abstractions.
+Client:
+    UsestheoperationsdefinedbytheAbstractFactoryonaConcreteFactory to obtain concrete implementations of the Products.
+
+抽象工厂实现UI
+包含家族:widow 和 menu
