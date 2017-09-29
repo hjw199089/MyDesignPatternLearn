@@ -1,0 +1,21 @@
+<<scala design patterns>>
+学习笔记
+
+[1]Introduction
+This chapter describes a Factory Operation pattern that can be used to construct objects of a given type.
+The methods on the Factory Operation return objects that implement a given trait or (typically abstract) super class.
+The client of the factory only knows about the trait or parent superclass.
+Thus different objects can be instan- tiated depending on the current situation/requirements
+(as long as they implement the trait or extend the superclass).
+
+[2]Intent
+To hide the instantiation of a specific type from a client thereby allowing flexibility in that instantiation.
+
+
+[3]Pros and Cons
+The primary advantages of the Factory Operation pattern are that:
+• The client and the creation process are separated and independent of each other.
+• The actual type being instantiated is hidden from the client and can therefore
+change without the client code needing to be altered.
+• The set of product types being instantiated may change dynamically and inde-
+pendently of the client.
