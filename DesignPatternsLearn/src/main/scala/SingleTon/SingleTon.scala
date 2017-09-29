@@ -1,3 +1,8 @@
+package SingleTon
+
+/**
+  * Created by hjw on 17/9/29.
+  */
 /**
   * Created by hjw on 17/9/27.
   */
