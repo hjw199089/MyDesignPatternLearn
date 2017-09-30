@@ -1,11 +1,11 @@
-package Adapter.ClassTraitFormat
+package Adapter.TraitFormat
 
 /**
   * Created by hjw on 17/9/30.
   */
 
 //现有的Client
-class Client (server: Server){
+class Client(server: Server) {
   def doWork = {
     server.invoke
   }

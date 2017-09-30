@@ -1,0 +1,2 @@
+通过trait的形式构建一个Adaptor(混入Server)
+在应用中将Adaptee混入Adaptor完成适配
