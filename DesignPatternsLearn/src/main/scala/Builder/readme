@@ -1,0 +1,41 @@
+创建者模式
+0930
+例子:simple document creation application
+
+Introduction
+Builder pattern is to separate the construction of a complex object
+from the client of that object so that the creation process can create
+different imple mentations as required without affecting the client.
+
+Intent
+To encapsulate the construction process used to create complex objects from clients of those objects.
+
+
+Forces/Motivation
+The Builder Pattern can be used when
+• The steps required to create a complex object are independent of the
+  elements that make up that object and how they are assembled.
+• The construction process must allow different representations of the object to be constructed.
+
+Constituent Parts
+Product
+Concrete Product
+Builder
+ConcreteBuilder
+Director
+Client
+
+Pros and Cons
+The advantages of the Builder Pattern are:
+• The construction of a product and its constituent parts
+  are independent of each other. Allowing both to change independently
+  (i.e. a different Director can be used and / or different builders can be used for the parts).
+• The whole construction process is encapsulated from the client
+  allowing the process to change without affecting the client.
+  Builder provides finer grained control over the Factory pattern
+  as the director has step-by-step control over the creation of the parts of the object to be constructed.
+
+[node]
+the Builder and Concrete Builder could be traits that
+are mixed into the Director as required or could be objects that are referenced by the director.
+在java中将对象放在抽象构建者Builder中,scala 可以直接将对象已特质的形式混入Builder或者Director中

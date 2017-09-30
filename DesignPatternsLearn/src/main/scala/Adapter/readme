@@ -1,0 +1,25 @@
+适配器模式
+
+Introduction
+An Adapter lets types work together that were not
+originally designed for such a purpose either because
+their interfaces are not compatible or because their interfaces are not known to each other.
+
+Intent
+To convert the interface of one type into the interface that the client expects.
+
+Forces/Motivation
+You want to achieve the following:
+• To link together to types in which the operations are semantically the same but are not named the same.
+• To link together two types in which are functionally the same but where they are not related in the type system.
+• To link together two types in which the data formats required are transformable but not directly compatible.
+• Some combination of the above.
+
+Constituent Parts
+The Adapter
+The Adaptee
+The Client
+
+Implementations
+categorised into Object based, Class based, Trait based and Function based solutions.
+
