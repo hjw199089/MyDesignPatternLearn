@@ -1,0 +1,5 @@
+
+利用继承+偏函数完成参数不一致的形式的适配
+Adaptee class defines a method printer that takes two param- eters
+title and name (both of type String). However the Client expects
+a Service that defines a function print that takes a String and return Unit.
