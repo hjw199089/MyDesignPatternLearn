@@ -1,0 +1,34 @@
+1001
+Facade外观模式
+
+Introduction
+This pattern allows a (simplifying) object to unify a (potentially more complex) interface to a set of objects.
+The Façade can often be viewed as an interface to a subsystem.
+It has the effect of simplifying the interface between the clients and the subsystem objects.
+
+Intent
+To simplify access to a related set of objects,
+by providing one object that all client objects outside the set, can use to interact with that set.
+
+Forces/Motivation
+Situations which motivate the use of the Façade pattern include:
+• Clients with many dependencies on other types that must be instantiated, configured or invoked in potentially complex ways.
+• The dependencies between the client and the implementing types add significantly to the complexity of the client code.
+• The interactions present in one client are repeated in several additional classes resulting in the complexity being propagated.
+• Packaging a set of classes behind a Façade decouples those classes and their implementations from the their clients,
+  thereby allow for future development, enhancement and modification of the implementing classes.
+
+Constituent Parts
+Client
+Façade
+Façademembers
+
+Pros and Cons
+The advantages of the Façade Pattern are:
+• Clients of the Façade do not need to know anything about the objects behind the façade.
+• There is a single dependency between the client and the façade.
+• Changes can be made to the objects behind the Façade with little or no impact on
+  the client.
+
+Concrete Example
+The code example presented creating a Façade that handles writing different types of financial product to appropriate data stores.
