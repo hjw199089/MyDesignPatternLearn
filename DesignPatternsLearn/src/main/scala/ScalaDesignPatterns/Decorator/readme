@@ -1,0 +1,38 @@
+装饰者模式
+
+Introduction
+The Decorator Design pattern extends the behaviour of an object without using sub classing.
+This decoration of an object is transparent to the decorators’ clients.
+
+Intent
+To dynamically attach additional behaviour to an object (without the use of subtyping).
+
+Forces/Motivation
+The Decorator pattern can be used when
+• it is necessary to add behaviour to an individual object dynamically and transpar- ently to the client,
+  without affecting other objects.
+• this behaviour may also need to be withdrawn in some cases.
+• extension by sub classing is not possible (such as with Java’s final classes).
+• there are very many possible decorations which may need to be selected depending
+  upon the situation.
+
+Constituent Parts
+    Service
+    Concrete Service
+    Decorator
+    Client
+
+Implementation Issues
+[1]One approach
+Use a very object oriented style in which the decorators are
+objects that have the same interface as the main service with the addition of any new behaviour.
+The decorator then delegates to the service for the behaviour it already provides and directly implements the new behaviour.
+Scala world is that the decorator can be dynamically added to the service object as a runtime configuration
+
+[2]Alternative approach
+Define the Decorators as traits and to mix these traits in to the object at the point of instantiation
+
+Concrete Example
+The application used in this section is based on decorating
+a simple FileReader object with further readers that provide
+additional behaviour (in this case buffering and synchronization of the data reading process).

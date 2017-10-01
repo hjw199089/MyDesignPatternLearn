@@ -12,7 +12,7 @@ object DocumentViewerFactory extends Factory{
    var viewers = HashMap[String, String=>DocumentViewer]()
 
   override def create(s: String): DocumentViewer = {
-    var pos = s.lastIndexOf(".") //获取文件格式
+    var pos = s.lastIndexOf("") //获取文件格式
     if(pos < 0) {
       pos = 0
     }
