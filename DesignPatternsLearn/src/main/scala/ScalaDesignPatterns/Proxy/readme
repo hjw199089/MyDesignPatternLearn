@@ -1,0 +1,52 @@
+1002
+Proxy-代理
+需要时(迟后)实例化
+
+Introduction
+The Proxy pattern uses a placeholder whose interface
+resembles the actual object and that is used by clients
+rather than the client directly accessing the actual object
+a number of situations:
+Virtual Proxy
+Protection Proxy
+Remote Proxy
+• the actual service is expensive to create and should only be done so lazily when required (known as a Virtual Proxy),
+• the actual service requires protection, for example, via access controls for security reasons (known as a Protection Proxy),
+• the actual service is remote and we wish local clients to access the proxy as a local object and for the proxy to handle the complexities of remote access (known as a Remote Proxy).
+
+Intent
+To make use of a surrogate or placeholder for another object
+allowing controlled access to that object or for that object to be created lazily.
+
+Forces/Motivation
+The Proxy Pattern can be used where it is
+• Time consuming to instantiate objects.
+• Expensive in terms of system resources (such as memory) to instantiate very  many objects
+• Instantiating an object per client is unnecessary as target objects do not hold state.
+• The apparent performance of the application may be improved by reducing the number of objects created and destroyed.
+• Avoiding placing the responsibility/burden on client code to determine whether to lazily instantiate the service or not.
+
+Constituent Parts
+Service
+    This role representation the abstract(orgeneric concept)that is implemented
+    by the service implementation and whose interface is mirrored by the proxy.
+Service Implementation
+    The concrete implementation of the service concept.
+ProxyImplementation
+    The concrete implementation that provides the operations in the Service by
+    utilizing the behaviour in the Service implementation.
+    May lazily instantiate the Service Implementation or may protect access to the service implementation etc. as required.
+Client
+    Uses the proxy to access the service implementation.Should not have direct access to the service implementation.
+
+Pros and Cons
+The advantages of the Proxy Pattern are:
+• Standardised access to the service, e.g.
+  all clients instantiate the service lazily or provide common secure access to the service.
+• Clients do not need to be aware of the use of lazy initialization, or secured access etc.
+
+Concrete Example
+Proxy pattern provides a proxy that lazily loads an image
+when the contents of that image is actually required,rather than when the Proxy is created.
+Thus the cost of reading the image file,
+loading the image data into memory and creating an image object is avoided unless the image is actually used.
