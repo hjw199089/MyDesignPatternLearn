@@ -1,0 +1,64 @@
+1002
+Flyweight
+享元模式
+
+Introduction
+The Flyweight pattern allows a large number of similar objects to be reduced in number to a small set of shared objects.
+This has benefits in terms of memory over- heads, object creation, object destruction etc.
+However, the state of the shared objects may need to be analysed to determine which parts of the state can be shared
+(and permanently stored internally to the object) and which parts of the state need to be externalized and
+provided by a client of the shared object each time it accesses that object.
+
+Intent
+To allow fine-grained objects to be shared, avoiding the expense of multiple instances.
+
+Context
+If an application does not consider how and where it is using objects
+then it may be dynamically creating essentially the same object many times.
+If these objects are essentially the same, and particularly
+if they share state information and are immutable,
+it may not have been necessary to create multiple copies of the same data.
+If a framework was provided that allowed these objects to be easily shared significant benefits may be obtained.
+This is the intention of the Flyweight pattern.For example:
+Strings are immutable objects that are treated as flyweights,
+that is one string “John” is shared between all the references to that string by the JVM.
+
+Forces/Motivation
+The Flyweight pattern can be used where
+• Applications use a large number of similar objects.
+• The application may benefit from reducing the number of objects created and
+  garbage collected.
+• Storage costs are high due to the quantity of objects created.
+• The context associated with the object is enough to represent the object, that is
+  no unique reference or object identity is required
+
+Constituent Parts
+Flyweight
+    This represents the core Flyweight concept. It may define how the extrinsic state of the object is received and acted upon (or it may simply be a marker trait).
+Shared Concrete Flyweight
+    A Concrete implementation of the Flyweight concept that is inherently designed to be a shared object.
+Unshared Concrete Flyweight
+    In situations it may not be possible to share the flyweight objects, for these situations an unshared Concrete Flyweight object can be used. However, to gain the maximum benefit from the Flyweight pattern, the unshared flyweights should be kept to a minimum.
+Flyweight Factory
+    The client of a Flyweight is not responsible for creating the Flyweight. Instead a factory object is used to manage the creation and supply of flyweights. In this way the Factory is able to ensure that flyweights are shared amongst clients in an appropriate manner.
+Client
+    The Client obtains flyweights form the Flyweight Factory and (may set their intrinsic sate) and uses the functionality provided by the flyweight as required. It may or may not maintain a reference to that flyweight.
+
+Pros and Cons
+The advantages of the Flyweight Pattern are:
+• Reduces the storage requirements of the application
+• Reduces the number of object creations and destruction that occur and may
+therefore improve performance of an application.
+
+Concrete Example
+Illustrates how account information, required by multiple trade objects, can be shared using flyweight accounts.
+Account trait defines the abstract read only properties number,counterparty and valid.
+The Account represents the account for a counter party involved in various trades.
+As the account used for any number of trades by a counter party is the same account it can be shared amongst all the trades.
+Note that the account is immutable as it represents information about an account (such as the counter parties name,
+their account number and whether the account is valid or not).
+It is not the actual account and thus does not have a balance or set of transactions associated with it.
+
+AccountFlyweightFactory is a singleton object that is used to provide Account objects on demand.
+If the account object has already been requested then hat flyweight object is reused for the new request.
+Thus multiple clients can use the same Account object.
