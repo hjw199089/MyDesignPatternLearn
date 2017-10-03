@@ -1,0 +1,39 @@
+Filter-过滤器模式
+
+Introduction
+    The Filter Design pattern describes how objects can
+    intercept requests for a target object and carry out
+    some activity before the target object receives that request
+
+Intent
+    To provide pre and post processing of a request/invocation on a target object.
+
+Forces/Motivation
+    The Filter pattern can be used when
+    • A target object’s input and output data must be pre or post processed without changing that object.
+    • Where some pre or post processing operations/behaviour is required and either access to the target
+      objects source is unavailable or changes to that source are undesirable.
+
+Constituent Parts
+    Abstraction
+        The interface to be presented to the client by the target and the filters that will sit in front of the target.
+    Target
+        The eventual target object, around which the filters are organised.
+    Filter
+        One or more objects that will sit infront of the Target and will pre and post
+        process any operations that can be invoked on the target.
+    Client
+        The client invokes behaviour that will be pre and post processed by the
+        Filters. The Client may be responsible for constructing the Filter Chain
+        or may be unaware of the fact that the target is filtered.
+Pros and Cons
+The advantages of the Filter Pattern are:
+• Allows a program to provide transformations and analysis on data
+    for a target object without requiring modification of that target object
+
+Concrete Example
+    The example used in this section provides two filters
+    that can be added to a DAO (Data Access Object). This
+    simplified DAO allows a type to be saved, retrieved and deleted.
+    The Filters provide for logging of method invocation and monitoring
+    of the time taken to execute a method.
