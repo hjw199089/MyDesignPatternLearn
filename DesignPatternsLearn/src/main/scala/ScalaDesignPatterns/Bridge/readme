@@ -1,0 +1,29 @@
+1003
+Bridge-桥接模式
+
+Introduction
+    The Bridge pattern provides an intermediary between an abstraction and its imple- mentation.
+
+Intent
+    To separate those types that represent an abstraction (concept) from those types that provides the implementation for the abstraction.
+
+
+Forces/Motivation
+    The motivating conditions behind the Bridge Pattern include:
+    • When hierarchies of abstractions and hierarchies of their implementations are combined into a single type hierarchy,
+      classes that use those classes become too closely linked to a specific implementation of the abstraction.
+      Changing the implementation used for an abstraction should not require changes to the classes that use the abstraction.
+    • The logic in difficult implementations of an abstraction is repeated in each imple- mentation.
+      It would therefore be useful to make this logic reusable by encapsulating it into a trait or collaborator class.
+    • This also allows the common logic to be reused when a new implementation of the abstraction is produced.
+    • In some cases multiple abstractions should share the same implementation.
+    • Where extending the common logic of an abstraction is required,
+      and the implementation should be reused as widely as possible.
+Pros and Cons
+    The advantages of the Bridge Pattern are:
+    • The abstraction and its implementations are organized into separate hierarchies.
+      It is therefore possible to extend each hierarchy without directly impacting the other.
+    • It is also possible to have multiple concrete implementations for an abstraction
+    type or multiple abstraction types using the same implementation.
+    • Clients of the abstraction are unaware of the implementation types.
+    • An abstraction can change its implementation without any impact on the client.
