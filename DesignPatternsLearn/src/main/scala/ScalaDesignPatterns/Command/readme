@@ -1,0 +1,46 @@
+1003
+Command-命令模式
+
+
+Introduction
+    The Command Pattern presents a way of encapsulating an operation into an object
+    that can be passed around between objects, managed, sequenced, scheduled and executed as required.
+    It insulates an operation from the execution of that operation and thus also allows operations to be persisted,
+    resurrected as well as offers the option of executing operations remotely.
+    In the Command Pattern, an object creates a new instance of a Command and passes
+    it to a Command Executor that actually performs the execution of that command.
+
+Intent
+    Encapsulates behaviour into an object so that it can be selected,
+    sequenced, queued, done and undone, submitted to clients for execution
+    (locally or remotely) and other- wise manipulated.
+
+Forces/Motivation
+The Command Pattern can be used when
+• Specifying an action to perform for a client object.
+• Specifying, queuing and executing requests at different times, or selecting
+  amongst requests based on some criteria.
+• You wish to be able to undo and redo operations.
+• Supporting the logging of operations so that they can be reapplied if a system
+   crashes or is otherwise corrupted.
+• Providing the semantics of a set of high-level operations that can be combined in
+  an appropriate manner and that are built on lower level primitive operations.
+
+Constituent Parts
+There are four main roles within the Command Pattern:
+Command
+    This type represents the abstract concept of the Command.
+Concrete Command
+    This type implements a particular command that can be submitted by a client (invoker) and submitted to a Command Executor.
+Command Executor
+    This type is responsible for managing the collection and execution of Commands. That is the executor knows how to execute Commands.
+Invoker
+    The Invoker is responsible for creating Commands and submitting them to the Command Executor. There may be any number of invokers.
+
+ Pros and Cons
+ The advantages of the Command Pattern are:
+ • The Command separates the object that invokes the operation from the one that knows how to perform it.
+ • Commands are first class objects. They can be created, manipulated and passed around just like any other object.
+ • The Command type hierarchy can be developed to create different types of commands.
+ • As the creation and submission of a command is separated from its execution there is flexibility in the timing and sequencing of commands.
+ • It is easy to add new commands, as it is not necessary to change existing types.
