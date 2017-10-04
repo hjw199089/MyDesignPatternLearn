@@ -1,0 +1,37 @@
+1004
+Strategy-策略模式
+
+Introduction
+In some cases it may be necessary to alter the implementation of an operation
+without changing the type (or the identity) of the encompassing object.
+In this situation instantiating a whole new object would lose the identity
+and may result in additional, unnecessary objects being created.
+
+The Strategy pattern provides an approach to this problem that
+allows the imple- mentation of an operation can be changed dynamically at runtime.
+
+Intent
+To allow the algorithmic implementation of some behaviour to be selected as required (and to be changeable over time).
+
+Forces/Motivation
+The Strategy Pattern can be used when
+• An application must be able to change the implementation of an operation at runtime or must be able to change it based on some selection criteria.
+• The differences in implementation (algorithm) can be encapsulated into the strategy and there is a consistent approach to accessing these different implementations.
+• Clients do not need to know anything about how the operations are implemented.
+• Switching between different instances of different classes would lose identity integrity.
+
+Constituent Parts
+Client
+Strategy
+ConcreteStrategy
+The Context
+
+Concrete Example
+TaxCalculator class that can be given different strategy implementations that are used to determine the tax to be paid by a given Person.
+Each Person object has an associated salary and the strategy uses the person’s salary information to generate the tax they must pay.
+However, the tax rate may differ depending upon a number of factors and must therefore be set as appropriate.
+
+Pros and Cons
+The advantages of the Strategy Pattern are:
+• The Strategy Pattern allows the behaviour of clients to be determined dynami- cally, at runtime, potentially on a per invocation basis.
+• Client objects can be simplified, as they do not need to be responsible for the selection of the appropriate behaviour.
