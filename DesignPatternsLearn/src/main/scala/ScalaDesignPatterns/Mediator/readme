@@ -1,0 +1,34 @@
+1004
+mediator-中介者模式
+
+Introduction
+    The Mediator pattern provides a solution to
+    this problem by introducing an intermediary
+    object that is responsible for controlling
+    and coordinating the com- munication of other objects.
+    In this architecture each object need only communicate
+    with the mediator and thus only needs to maintain a single reference.
+    The Mediator is then responsible for maintaining references to all those objects that wish to communicate.
+
+Intent
+    To define an object that represents a common communication mechanism,
+    that allows a set of objects to interact, without those objects needing
+    to maintain links to each other. It therefore promotes a loosely coupled,
+    but high cohesive communica- tion infrastructure without each object need
+    to maintain a reference to all the other objects.
+
+Forces/Motivation
+    The mediator pattern should be used where:
+    • A set of objects communicate in well-defined but complex ways.
+      The resulting interdependencies are unstructured and difficult to understand.
+    • Reusing an object is difficult because it refers to, and uses, many other objects.
+    • A particular behaviour is distributed amongst a number of classes and we wish
+      to customize that behaviour with the minimum of sub-typing.
+
+Pros and Cons
+    The mediator pattern has the following benefits and drawbacks:
+    • It limits sub-typing to the mediator (e.g. by changing the routing algorithm in mediator you can change the systems behavior).
+    • It de-couples colleagues.
+    • It simplifies object protocols from many to many down to one to many.
+    • It abstracts how objects cooperate.
+    • It centralizes control.
