@@ -1,0 +1,17 @@
+1004
+Observer-观察者模式
+
+Introduction
+    The observer pattern provides a way of ensuring that a set of objects is notified whenever the state of another object changes.
+
+Intent
+    To manage a one to many relationship between an object and those objects interested in the state
+    and in particular state changes of that object.
+    Thus when the objects state changes, the interested (dependent) objects are notified of that change
+    and can take whatever action is appropriate.
+
+Forces/Motivation
+• Two, otherwise independent types, are related by
+   the changes in the state of one (which need to be notified to the other).
+• Where a change in the state of one object needs to be notified to zero or
+  more other objects and where the number or actual objects may change or are not known until runtime.
