@@ -1,0 +1,34 @@
+1004
+State-状态机模式
+
+Introduction
+The State Design pattern encapsulates the states that an object can be in,
+as a discreet set of objects, each belonging to a separate sub type of an abstract state type.
+
+Intent
+To allow an object to alter it behaviour when its internal state changes;
+the end result is that the object will appear to change its type.
+
+Forces/Motivation
+• An object’s behaviour depends on its state and it must change its behaviour at runtime depending upon that state.
+• The logic to be implemented to manage the states of an object may become large and complex as the number of states grows.
+
+Constituent Parts
+Context The Context is an object that exhibits stateful behaviour.
+That is the behaviour of the Context differs depending upon its state.
+Contexts determine their current state by keeping a reference to an instance of a concrete type of state.
+The Context delegates state-specific requests to the current Concrete State
+
+State
+ Typically the State provides operations such as
+• An init operation
+    to handle any initializations required by the state (it is only called once just after the state object is originally created).
+• A handle operation
+    that takes an indicator of an event that has occurred and returns the appropriate new state generated as a result of transitions from the current state to the new state via the event.
+The state may also provide two additional methods related to the state lifecycle:
+• An entry operation that is invoked when the state is entered into (and after the init method has been invoked). If the state is reused this operation may be called each time the state is reused.
+• An exit operation that is invoked just before the state is exited.
+Finally, the state type will define a set of operations that may be invoked on each
+state (which will provide state specific behaviour).
+
+Concrete States
