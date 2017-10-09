@@ -1,0 +1,35 @@
+Introduction
+  Allow client objects to obtain state information about other parts
+  of an application without having direct access to (or knowledge of) those parts.
+
+Intent
+    The Visitor pattern represents an operation to be performed on each of the members of an object structure in turn,
+    capturing the results of those operations for client code.
+    Visitor lets you define a new operation without changing the classes of the elements on which it operates
+
+Forces/Motivation
+ The Visitor pattern is useful in situations where
+ • There are a variety of operations that need to be performed on an object structure.
+ • The object structure is composed of objects that belong to different types.
+ • The types of objects that can exist in the object structure do not change often and
+    they ways in which they are related are consistent and predictable.
+
+
+Concrete Example
+a document domain model.
+In this scenario a Document is comprised of a collection of Chapters and a Table Of Contents.
+The chapters each have a title and a set of headings.
+The Table Of contents is made up of a list of titles and headings, based on the chapters that comprise the document.
+The challenge is to provide a way to generate the Table Of Contents without knowing the structure of the Document.
+To do this a Chapter Visitor is used. This is a visitor type (as indicated by the Visitor marker trait)
+that is used to visit each of the Visitable chapters and capture the information related to their title and headings.
+Once it has visited all the chapters it can generate the table of contents for the Document
+
+
+Pros and Cons
+Advantages
+• The Visitor pattern makes it easy to (logically) add new operations to an object structure.
+  Although a similar result could be achieved using Traits (by missing the traits into a set of objects)
+  the visitor allows for run time dynamic binding of such operations.
+• The Visitor represents the implementation of all the logic for some operation in one cohesive type,
+  rather than spread across multiple types. This results in a simpler maintenance problem.
